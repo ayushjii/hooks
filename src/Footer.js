@@ -131,6 +131,10 @@ export default function Footer() {
                 title: 'Instagram',
                 path: 'http://instagram.com',
               },
+              {
+                title: 'LinkedIn',
+                path: 'http://linkedin.com',
+              },
             ]}
           />
         </div>
