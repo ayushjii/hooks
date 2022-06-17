@@ -6,35 +6,38 @@ import {RiFacebookLine, RiLinkedinLine} from 'react-icons/ri';
 import {TbBrandTwitter} from 'react-icons/tb'
 import styled from "styled-components";
 
-
 const SocialStyle = styled.div`
+.icons{
+  padding: 10rem 60rem;
+ display:flex;
+ column-gap:45px;
+}
 
-    display: flex;
-    gap: 3rem;
-    font-family: 'Poppins', sans-serif;
-    background-color: #242329;
-    display: grid;
-    place-items: center;
-    height: 100vh;
+.s-icon{
+width:60px;
+height: 60px;
+display: inline-flex;
+align-items: center;
+justufy-content: center;
+text-decoration: none;
+font-size: 26px;
+color: #fff;
+border-radius: 50%;
+outline: 2px solid #fff;
+transition-property: outline-offset, outline-color, background-color;
+transition-duration: .25s ;
+}
+.s-icon:hover{
+    outline-offset: 4px;
+}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.s-icon:hover,
+ .icon{
+ animation: shake .50s;
 }
-.icon--instagram,
-.icon--twitter,
-.icon--linkedin,
-.icon--facebook{
-flex:3rem;
-}
-.social-container{
-    display: flex;
-    column-gap: 25px;
-}
-${'' /* .icon--twitter:hover {
-    background-color: #1da1f2;
-    outline-color: #1da1f2;
+.icon--twitter:hover {
+    background-color: #1fa1f2;
+    outline-color: #1fa1f2;
 }
 
 .icon--linkedin:hover {
@@ -43,8 +46,8 @@ ${'' /* .icon--twitter:hover {
 }
 
 .icon--facebook:hover {
-    background-color: #2ea44f;
-    outline-color: #2ea44f;
+    background-color: #ff4500;
+    outline-color: #ff4500;
 }
 
 .icon--instagram:hover {
@@ -53,71 +56,61 @@ ${'' /* .icon--twitter:hover {
             #fd5949 45%, #d6249f 60%,
             #285AEB 90%);
     outline-color: #a02d76;
-} */}
-
+}
+@keyframes shake {
+  10%{transform: rotate(15 deg);}
+  20%{transform: rotate(-15 deg);}
+  30%{transform: rotate(15 deg);}
+  40%{transform: rotate(-15 deg);}
+}
 `;
 
 export default function Socialmedia(){
     return(
-     <div>
-     <div className="social-container">
-    <SocialStyle>
+    <>
+      <SocialStyle>
          <SectionTitle 
             heading="Our Social Media Handles"
             subheading=" " />
-         <div class="icons">
-         <div>
-         <SocialIcon className="icon--instagram"
-           links={[
-              {
+         <div className="icons">
+            <div className="s-icon icon--instagram">
+             <SocialIcon 
+               links={[
+               {
                 icon:<IoLogoInstagram />,
                 path: 'http://instagram.com',
-              },
-           ]}/>
+               },
+             ]}/>
          </div>
-         <div>
-         <SocialIcon  className="icon--facebook"
-         links={[
-              {
+            <div className="s-icon icon--facebook">
+             <SocialIcon  
+               links={[
+               {
                 icon:<RiFacebookLine />,
                 path: 'http://facebook.com',
-              },
-           ]}/>
+               },
+             ]}/>
          </div>
-         <div>
-         <SocialIcon className="icon--linkedin"
-          links={[
-              {
+            <div className="s-icon icon--linkedin">
+             <SocialIcon 
+               links={[
+               {
                 icon:<RiLinkedinLine />,
                 path: 'http://linkedin.com',
-              },
-           ]}/>
+               },
+              ]}/>
          </div>
-         <div>
-         <SocialIcon className="icon-twitter"
-           links={[
-              {
+            <div className="s-icon icon--twitter">
+             <SocialIcon
+               links={[
+               {
                 icon:<TbBrandTwitter />,
                 path: 'http://twitter.com',
-              },
-           ]}/>
+               },
+              ]}/>
          </div>
-
-    {/* <a href="www.instagram.com" className="icon icon--instagram">
-      <i class="ri-instagram-line"></i>
-    </a>
-    <a href="www.instagram.com" className="icon icon--twitter">
-      <i class="ri-twitter-line"></i>
-    </a>
-    <a href="www.instagram.com" className="icon icon--linkedin">
-      <i class="ri-linkedin-line"></i>
-    </a>
-    <a href="www.facebook.com" className="icon icon--github">
-      <i class="ri-github-line"></i>
-    </a> */}
-  </div>
-    </SocialStyle>
        </div>
-     </div>
+      </SocialStyle>
+    </>
     );
 }

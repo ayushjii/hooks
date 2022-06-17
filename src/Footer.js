@@ -143,7 +143,7 @@ export default function Footer() {
         <div className="container">
           <PText>
             © {year} - Ayush Goyal | Designed By{' '}
-            <a target="_blank" rel="noreferrer" href="#">
+            <a target="_blank" rel="noreferrer" href="mailto:pawangoyal6789.com">
             KRPKG
             </a>{' '}
           </PText>
